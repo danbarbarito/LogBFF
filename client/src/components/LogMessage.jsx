@@ -2,7 +2,17 @@ import { Show } from "solid-js";
 import styles from "./LogMessage.module.css";
 
 function LogMessage(props) {
-  return <div class={styles.LogMessage}>{props.log.message}</div>;
+  const logLevelClass =
+    {
+      info: styles.LogLevelInfo,
+      warning: styles.LogLevelWarning,
+      error: styles.LogLevelError,
+    }[props.log.level] || styles.LogLevelInfo;
+  return (
+    <div class={`${styles.LogMessage} ${logLevelClass}`}>
+      {props.log.message}
+    </div>
+  );
 }
 
 export default LogMessage;

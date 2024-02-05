@@ -11,7 +11,7 @@ struct LogBFFLog {
   string rawMessage;
   bool isJsonMessage;
   string message;
-  string level;
+  string level = "info";
 }
 
 struct LogBFFLogRequest {
@@ -72,6 +72,10 @@ LogBFFLog dbDataToLogBFFLog(int id, string date, string message) {
     else {
       log.message = "";
     }
+
+    if (jv["level"].type == JSONType.integer) {
+      log.level = levelToString(jv["level"].get!int);
+    }
   }
   catch (Exception e) {
     log.isJsonMessage = false;
@@ -88,8 +92,27 @@ JSONValue logBFFLogToJson(LogBFFLog log) {
     "rawMessage": JSONValue(log.rawMessage),
     "isJsonMessage": JSONValue(log.isJsonMessage),
     "message": JSONValue(log.message),
+    "level": JSONValue(log.level),
   ];
   return jv;
+}
+
+// TODO: Make this cleaner
+string levelToString(int level) {
+  switch (level) {
+  case 20:
+    return "debug";
+  case 30:
+    return "info";
+  case 40:
+    return "warning";
+  case 50:
+    return "error";
+  case 60:
+    return "critical";
+  default:
+    return "unknown";
+  }
 }
 
 LogBFFLogRequest jsonToLogBFFLogRequest(string json) {

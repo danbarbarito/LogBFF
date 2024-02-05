@@ -20,6 +20,18 @@ const start = async () => {
           },
           messageCount,
         });
+      case 1:
+        log.warn({
+          msg: "My Warning",
+          responseJson: {
+            warning: [
+              {
+                message: "This is the warning message",
+              },
+            ],
+          },
+          messageCount,
+        });
       default:
         log.error({ msg: "This is an error", messageCount });
     }
