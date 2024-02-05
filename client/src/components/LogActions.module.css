@@ -1,0 +1,10 @@
+.LogActions {
+  display: flex;
+  gap: 25px;
+  padding: 10px;
+}
+
+.LogActions > div {
+  display: flex;
+  gap: 10px;
+}

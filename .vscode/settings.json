@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.html": "mustache"
+  },
+  "eslint.workingDirectories": [
+    "client"
+  ],
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": false
+}

@@ -1,0 +1,10 @@
+.MainLayout {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.MainLayoutChild {
+  width: 100%;
+}

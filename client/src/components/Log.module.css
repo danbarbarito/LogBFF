@@ -1,0 +1,5 @@
+.Log {
+  display: flex;
+  box-sizing: border-box;
+  font-family: monospace;
+}

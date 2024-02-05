@@ -1,0 +1,11 @@
+.LogContainer {
+  height: calc(100vh - 200px);
+  border: 1px solid #3f3f3f;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-anchor: auto !important;
+  background: #141414;
+}

@@ -1,0 +1,15 @@
+{
+  "authors": ["Dan Barbarito"],
+  "copyright": "Copyright © 2024, Dan Barbarito",
+  "dependencies": {
+    "d2sqlite3": "~>1.0.0",
+    "vibe-d": "~>0.9"
+  },
+  "description": "A simple vibe.d server application.",
+  "license": "proprietary",
+  "name": "logbff",
+  "stringImportPaths": ["./assets/", "./views/"],
+  "subConfigurations": {
+    "d2sqlite3": "all-included"
+  }
+}
