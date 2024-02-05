@@ -2,6 +2,8 @@ import std.json;
 import std.datetime;
 import std.stdio;
 import std.format;
+import std.algorithm;
+import std.array;
 
 import db;
 
@@ -17,6 +19,7 @@ struct LogBFFLog {
 struct LogBFFLogRequest {
   int limit = 100;
   int offset = 0;
+  string[] levels = ["debug", "info", "warning", "error"];
 };
 
 struct LogBFFLogManager {
@@ -41,7 +44,10 @@ struct LogBFFLogManager {
       auto id = row["id"].as!int;
       auto date = row["date"].as!string;
       auto message = row["message"].as!string;
-      logs ~= logBFFLogToJson(dbDataToLogBFFLog(id, date, message));
+      LogBFFLog log = dbDataToLogBFFLog(id, date, message);
+      if (logMatchesRequest(log, logRequest)) {
+        logs ~= logBFFLogToJson(log);
+      }
     }
     JSONValue jj = logs;
     return jj.toString();
@@ -52,6 +58,15 @@ LogBFFLogManager makeLogBFFLogManager(LogBFFDatabase logBffDatabase) {
   LogBFFLogManager logBffLogManager;
   logBffLogManager.logBffDatabase = logBffDatabase;
   return logBffLogManager;
+}
+
+bool logMatchesRequest(LogBFFLog log, LogBFFLogRequest logRequest) {
+  writeln(log.level);
+  writeln(logRequest.levels.canFind(log.level));
+  if (!logRequest.levels.canFind(log.level)) {
+    return false;
+  }
+  return true;
 }
 
 LogBFFLog dbDataToLogBFFLog(int id, string date, string message) {
@@ -128,6 +143,13 @@ LogBFFLogRequest jsonToLogBFFLogRequest(string json) {
 
     try {
       logRequest.offset = jv["offset"].get!int;
+    }
+    catch (Exception e) {
+    }
+
+    try {
+      JSONValue levelsJson = jv["levels"].get!(JSONValue[]);
+      logRequest.levels = levelsJson.array.map!(x => x.get!string).array;
     }
     catch (Exception e) {
     }

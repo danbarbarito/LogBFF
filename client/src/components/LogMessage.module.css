@@ -4,17 +4,22 @@
   margin-right: 10px;
 }
 
+.LogLevelDebug {
+  color: #424242 !important;
+  background: #00f9bb !important;
+}
+
 .LogLevelInfo {
-  color: white;
-  background: #00b7f9;
+  color: white !important;
+  background: #00b7f9 !important;
 }
 
 .LogLevelWarning {
   /* color: #f49d37; */
-  background: #f49d37;
+  background: #f49d37 !important;
 }
 
 .LogLevelError {
   /* color: #f22b29; */
-  background: #f22b29;
+  background: #f22b29 !important;
 }

@@ -7,12 +7,12 @@ import MainLayout from "../layouts/MainLayout";
 import LogActions from "../components/LogActions";
 
 function Home() {
-  const { logs, paused, setPaused, maxLogs, setMaxLogs } = useLog();
+  const { logs, received } = useLog();
   return (
     <MainLayout>
       <div class={styles.Home}>
         <LogActions />
-        {logs().length === 0 ? (
+        {!received() ? (
           <div class={styles.FullscreenLoading}>
             <Loading />
           </div>

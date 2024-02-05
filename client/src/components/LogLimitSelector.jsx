@@ -4,7 +4,7 @@ import styles from "./LogLimitSelector.module.css";
 
 function LogLimitSelector(props) {
   const { maxLogs, setMaxLogs } = useLog();
-  const options = [50, 100, 200, 500, 1000];
+  const options = [50, 100, 200, 500];
   return (
     <div class={styles.LogLimitSelector}>
       <label class={styles.LogLimitLabel}>Log Limit</label>
