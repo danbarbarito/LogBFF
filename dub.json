@@ -5,8 +5,8 @@
     "d2sqlite3": "~>1.0.0",
     "vibe-d": "~>0.9"
   },
-  "description": "A simple vibe.d server application.",
-  "license": "proprietary",
+  "description": "Powerful log viewer packed into a single binary.",
+  "license": "MIT",
   "name": "logbff",
   "stringImportPaths": ["./assets/", "./views/"],
   "subConfigurations": {
