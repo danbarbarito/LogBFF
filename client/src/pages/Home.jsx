@@ -11,6 +11,7 @@ function Home() {
   return (
     <MainLayout>
       <div class={styles.Home}>
+        <LogActions />
         {logs().length === 0 ? (
           <div class={styles.FullscreenLoading}>
             <Loading />
@@ -18,12 +19,6 @@ function Home() {
         ) : (
           <LogContainer logs={logs} />
         )}
-        <LogActions
-          paused={paused}
-          setPaused={setPaused}
-          maxLogs={maxLogs}
-          setMaxLogs={setMaxLogs}
-        />
       </div>
     </MainLayout>
   );

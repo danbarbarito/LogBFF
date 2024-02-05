@@ -1,22 +1,15 @@
+import { useLog } from "../contexts/LogProvider";
 import styles from "./LogActions.module.css";
+import LogLimitSelector from "./LogLimitSelector";
+import LogPauseResume from "./LogPauseResume";
 
-function LogActions({ paused, setPaused, maxLogs, setMaxLogs }) {
+function LogActions(props) {
+  const { maxLogs, setMaxLogs } = useLog();
+
   return (
     <div class={styles.LogActions}>
-      <button onClick={() => setPaused(!paused())}>
-        {paused() ? "Resume" : "Pause"}
-      </button>
-      <div>
-        <label for="limit">Limit:</label>
-        <input
-          name="limit"
-          type="number"
-          min={1}
-          max={1000}
-          value={maxLogs()}
-          onChange={(e) => setMaxLogs(parseInt(e.target.value))}
-        />
-      </div>
+      <LogPauseResume />
+      <LogLimitSelector />
     </div>
   );
 }

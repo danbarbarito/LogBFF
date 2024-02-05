@@ -1,0 +1,18 @@
+.LogLimitSelector {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.LogLimitButton {
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background: transparent;
+}
+
+.LogLimitActiveButton {
+  background: rgb(21, 25, 255) !important;
+}
