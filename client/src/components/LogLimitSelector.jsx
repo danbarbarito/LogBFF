@@ -7,6 +7,7 @@ function LogLimitSelector(props) {
   const options = [50, 100, 200, 500, 1000];
   return (
     <div class={styles.LogLimitSelector}>
+      <label class={styles.LogLimitLabel}>Log Limit</label>
       <For each={options}>
         {(option) => (
           <button

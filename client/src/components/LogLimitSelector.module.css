@@ -13,6 +13,10 @@
   background: transparent;
 }
 
+.LogLimitLabel {
+  color: rgb(128, 128, 128);
+}
+
 .LogLimitActiveButton {
   background: rgb(21, 25, 255) !important;
 }
