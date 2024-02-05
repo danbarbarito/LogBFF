@@ -6,7 +6,7 @@ const start = async () => {
   while (true) {
     const randomNum = Math.floor(Math.random() * 10);
     const randomNum2 = Math.floor(Math.random() * 3);
-    const log = baseLogger.child({ msg: `Module ${randomNum}` });
+    const log = baseLogger.child({ module: `Module ${randomNum}` });
     switch (randomNum2) {
       case 0:
         log.info({
