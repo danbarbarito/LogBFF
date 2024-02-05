@@ -1,15 +1,20 @@
 .LogMessage {
   min-width: 200px;
+  padding: 10px;
+  margin-right: 10px;
 }
 
 .LogLevelInfo {
-  color: #32d3f9;
+  color: white;
+  background: #00b7f9;
 }
 
 .LogLevelWarning {
-  color: orange;
+  /* color: #f49d37; */
+  background: #f49d37;
 }
 
 .LogLevelError {
-  color: red;
+  /* color: #f22b29; */
+  background: #f22b29;
 }

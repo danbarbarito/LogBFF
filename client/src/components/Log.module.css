@@ -3,4 +3,9 @@
   box-sizing: border-box;
   font-family: monospace;
   padding: 5px;
+  opacity: 0.9;
+}
+
+.Log:hover {
+  opacity: 1;
 }
