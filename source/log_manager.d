@@ -61,8 +61,6 @@ LogBFFLogManager makeLogBFFLogManager(LogBFFDatabase logBffDatabase) {
 }
 
 bool logMatchesRequest(LogBFFLog log, LogBFFLogRequest logRequest) {
-  writeln(log.level);
-  writeln(logRequest.levels.canFind(log.level));
   if (!logRequest.levels.canFind(log.level)) {
     return false;
   }
