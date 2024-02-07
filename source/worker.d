@@ -18,18 +18,19 @@ struct LogBFFWorker {
     this.logBffDatabase.printVersion();
 
     string line;
-    while ((line = stdin.readln()) !is null) {
-      try {
-        if (!this.logBffConfiguration.quiet) {
-          writeln(line);
-        }
-        this.logBffLogManager.addLog(line);
-      }
+    runEventLoop();
+    // while ((line = stdin.readln()) !is null) {
+    //   try {
+    //     if (!this.logBffConfiguration.quiet) {
+    //       writeln(line);
+    //     }
+    //     this.logBffLogManager.addLog(line);
+    //   }
 
-      catch (Exception e) {
-        logError("LogBFF worker failed: " ~ e.msg);
-      }
-    }
+    //   catch (Exception e) {
+    //     logError("LogBFF worker failed: " ~ e.msg);
+    //   }
+    // }
   }
 }
 

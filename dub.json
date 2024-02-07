@@ -8,8 +8,5 @@
   "description": "Powerful log viewer packed into a single binary.",
   "license": "MIT",
   "name": "logbff",
-  "stringImportPaths": ["./assets/", "./views/"],
-  "subConfigurations": {
-    "d2sqlite3": "all-included"
-  }
+  "stringImportPaths": ["./assets/", "./views/"]
 }

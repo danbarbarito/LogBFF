@@ -32,10 +32,14 @@ struct LogBFFRouter {
 
   private void callbackLogsWs(scope WebSocket sock) {
     while (sock.connected) {
-      auto msg = sock.receiveText();
-      LogBFFLogRequest logRequest = jsonToLogBFFLogRequest(msg);
-      auto resp = this.logManager.logsJson(logRequest);
-      sock.send(resp);
+      try {
+        auto msg = sock.receiveText();
+        LogBFFLogRequest logRequest = jsonToLogBFFLogRequest(msg);
+        auto resp = this.logManager.logsJson(logRequest);
+        sock.send(resp);
+      }
+      catch (Exception e) {
+      }
     }
   }
 

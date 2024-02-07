@@ -41,6 +41,8 @@ void startServer() {
   }
 
   runEventLoop();
+
+  listener.stopListening();
 }
 
 void main(string[] args) {
